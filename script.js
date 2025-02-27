@@ -1,2 +1,4 @@
-alert("hello my script")
-console.log("jjjjj")
+let myVar = 10;
+const width = 11;
+
+alert("fffffff")
