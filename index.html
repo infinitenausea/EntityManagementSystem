@@ -1,16 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="./script.js"></script>
-
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <title>Entity Management System</title>
+</head>
 <body>
-    <div class = "div">
-        <P>111</P>
+    <div class="container">
+        <h1>Система управления сотрудниками</h1>
+        
+        <!-- Секция с формой для добавления сотрудников -->
+        <div class="card">
+            <h2>Добавление сотрудника</h2>
+            <form id="entityForm">
+                <!-- Выбор типа сотрудника, определяет класс-наследник для создания объекта -->
+                <div class="form-group">
+                    <label for="entityType">Тип сотрудника:</label>
+                    <select id="entityType" required>
+                        <option value="">-- Выберите тип сотрудника --</option>
+                        <option value="driver">Водитель</option>
+                        <option value="mechanic">Слесарь</option>
+                    </select>
+                </div>
+                
+                <!-- Основные поля, соответствующие базовому классу Employee -->
+                <div class="form-group">
+                    <label for="lastName">Фамилия:</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName">Имя:</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Возраст:</label>
+                    <input type="number" id="age" min="18" max="100" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Должность:</label>
+                    <input type="text" id="position" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="organization">Организация:</label>
+                    <input type="text" id="organization" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hireDate">Дата принятия на работу:</label>
+                    <input type="date" id="hireDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="hasChildren">
+                        Наличие детей
+                    </label>
+                </div>
+                
+                <!-- Контейнер для динамических полей, которые зависят от выбранного типа сотрудника -->
+                <div class="dynamic-fields" id="dynamicFields"></div>
+                
+                <!-- Кнопка для отправки формы и создания объекта -->
+                <button type="submit" class="submit-btn">Сохранить</button>
+            </form>
+        </div>
+        
+        <!-- Секция с таблицей для отображения созданных сотрудников -->
+        <div class="card">
+            <h2>Список сотрудников</h2>
+            <div id="tableContainer">
+                <!-- Здесь будет сгенерирована таблица с данными -->
+            </div>
+        </div>
     </div>
-</body>
 
+
+</body>
 </html>

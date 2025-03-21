@@ -1,0 +1,155 @@
+        /* Переменные для основных цветов интерфейса */
+        :root {
+            --primary: #4f46e5;         /* Основной цвет */
+            --primary-hover: #4338ca;   /* Цвет при наведении */
+            --bg-color: #f5f7fb;        /* Фоновый цвет страницы */
+            --card-bg: #ffffff;         /* Фон карточек */
+            --text-color: #374151;      /* Цвет текста */
+            --border-color: #e5e7eb;    /* Цвет границ */
+        }
+        
+        /* Базовые стили для страницы */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        /* Контейнер для центрирования и ограничения ширины контента */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Стили заголовка */
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Стили для карточек (формы и таблицы) */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        /* Сетка для формы */
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        /* Стили для групп полей формы */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        /* Стили для меток полей */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        /* Стили для полей ввода и выпадающих списков */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        /* Стили для чекбоксов */
+        input[type="checkbox"] {
+            width: auto;
+        }
+        
+        /* Стили для меток чекбоксов */
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Стили для динамических полей (специфичных для типа сотрудника) */
+        .dynamic-fields {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        /* Стили для кнопок */
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        /* Стили для кнопки отправки формы */
+        .submit-btn {
+            grid-column: span 2;
+            justify-self: center;
+            width: 200px;
+            margin-top: 15px;
+        }
+        
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        /* Стили для ячеек таблицы */
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        
+        /* Стили для заголовков таблицы */
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Зебра-полосы для строк таблицы */
+        tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        /* Стили для кнопки удаления */
+        .delete-btn {
+            background-color: #ef4444;
+            padding: 8px 12px;
+        }
+        
+        .delete-btn:hover {
+            background-color: #dc2626;
+        }
+        
+        /* Стили для пустой таблицы */
+        .empty-table {
+            text-align: center;
+            padding: 30px;
+            font-style: italic;
+            color: #6b7280;
+        }
